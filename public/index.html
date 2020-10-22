@@ -2,9 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Hello</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <div class="main-bg full-size"></div>
+    <a href="https://mischa.skyda.eu" class="full-size left-link"></a>
+    <a href="https://ira.skyda.eu" class="full-size right-link"></a>
+    <script>
+      const bgHolder = document.querySelector('.main-bg');
+      const leftLink = document.querySelector('.left-link');
+      const rightLink = document.querySelector('.right-link');
+
+      leftLink.addEventListener('mouseenter', () => { bgHolder.classList.add('left-bg') });
+      leftLink.addEventListener('mouseleave', () => { bgHolder.classList.remove('left-bg') });
+      rightLink.addEventListener('mouseenter', () => { bgHolder.classList.add('right-bg') });
+      rightLink.addEventListener('mouseleave', () => { bgHolder.classList.remove('right-bg') });
+    </script>
   </body>
 </html>

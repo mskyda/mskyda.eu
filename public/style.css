@@ -1,0 +1,23 @@
+.full-size {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.main-bg {
+  background: #fff url('img/bg.jpg') center center no-repeat;
+  background-size: auto 100%;
+}
+.main-bg.left-bg { background-image: url('img/mischa.jpg'); }
+.main-bg.right-bg { background-image: url('img/ira.jpg'); }
+.left-link {
+  right: 47%;
+  background-image: url('img/mischa.jpg');
+  opacity: 0;
+}
+.right-link {
+  left: 53%;
+  background-image: url('img/ira.jpg');
+  opacity: 0;
+}
