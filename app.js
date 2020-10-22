@@ -1,6 +1,5 @@
 'use strict';
 
-// [START gae_node_request_example]
 const express = require('express');
 const vhost = require('vhost');
 const path = require('path');
@@ -9,6 +8,7 @@ const app = express();
 const mischa = express();
 const ira = express();
 
+app.use(express.static(__dirname + '/public'));
 app.use(vhost('mischa.skyda.eu', mischa));
 app.use(vhost('ira.skyda.eu', ira));
 

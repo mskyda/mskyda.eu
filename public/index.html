@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="image" href="img/mischa.jpg">
+    <link rel="preload" as="image" href="img/ira.jpg">
     <title>Hello</title>
   </head>
   <body>
@@ -10,14 +12,14 @@
     <a href="https://mischa.skyda.eu" class="full-size left-link"></a>
     <a href="https://ira.skyda.eu" class="full-size right-link"></a>
     <script>
-      const bgHolder = document.querySelector('.main-bg');
+      const body = document.querySelector('body');
       const leftLink = document.querySelector('.left-link');
       const rightLink = document.querySelector('.right-link');
 
-      leftLink.addEventListener('mouseenter', () => { bgHolder.classList.add('left-bg') });
-      leftLink.addEventListener('mouseleave', () => { bgHolder.classList.remove('left-bg') });
-      rightLink.addEventListener('mouseenter', () => { bgHolder.classList.add('right-bg') });
-      rightLink.addEventListener('mouseleave', () => { bgHolder.classList.remove('right-bg') });
+      leftLink.addEventListener('mouseenter', () => { body.classList.add('left-bg') });
+      leftLink.addEventListener('mouseleave', () => { body.classList.remove('left-bg') });
+      rightLink.addEventListener('mouseenter', () => { body.classList.add('right-bg') });
+      rightLink.addEventListener('mouseleave', () => { body.classList.remove('right-bg') });
     </script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "name": "skyda.eu",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "license": "Apache-2.0",
   "author": "mskyda@gmail.com",
@@ -8,7 +8,8 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "deploy": "gcloud app deploy"
   },
   "dependencies": {
     "express": "^4.17.1",
