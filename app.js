@@ -8,21 +8,13 @@ const app = express();
 const mischa = express();
 const ira = express();
 
-app.use(express.static(__dirname + '/public'));
 app.use(vhost('mischa.skyda.eu', mischa));
 app.use(vhost('ira.skyda.eu', ira));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/public/index.html'));
-});
+app.use(express.static(__dirname + '/public/root/'));
+mischa.use(express.static(__dirname + '/public/mischa/'));
+ira.use(express.static(__dirname + '/public/ira/'));
 
-mischa.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/public/mischa.html'));
-});
-
-ira.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/public/ira.html'));
-});
 
 app.listen(process.env.PORT || 8080);
 
