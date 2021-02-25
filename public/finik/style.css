@@ -1,0 +1,19 @@
+html,
+body {
+    background: #fff url('img/finik.jpg') center center no-repeat;
+    background-size: 100% auto;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    font: 3vmax/5vmax Arial, Helvetica, sans-serif;
+    position: absolute;
+    top: 40%;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    text-shadow: 0 0 10px #000;
+}
+h1 span {
+    display: block;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Finik's Homepage</title>
+  </head>
+  <body>
+    <h1>Finik comes in <span class="counter"> ....... </span></h1>
+    <script>
+      const birth = new Date('2021-05-12T00:00:00.000+02:00');
+
+      setInterval(() => {
+
+        const now = (new Date).getTime();
+        const diff = birth - now;
+        const days = diff / (1000 * 3600 * 24);
+        const hours = days % 1 * 24;
+        const minutes = hours % 1 * 60;
+        const seconds = minutes % 1 * 60;
+        const html = `${Math.floor(days)} days ${Math.floor(hours)} hours ${Math.floor(minutes)} minutes ${Math.floor(seconds)} seconds`;
+
+        document.querySelector('.counter').innerHTML = html;
+
+      }, 1000);
+    </script>
+  </body>
+</html>
