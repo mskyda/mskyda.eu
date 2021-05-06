@@ -5,15 +5,11 @@
   "license": "Apache-2.0",
   "author": "mskyda@gmail.com",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=12.0.0"
   },
-  "scripts": {
-    "start": "node app.js",
-    "deploy": "gcloud app deploy"
-  },
+  "scripts": {},
   "dependencies": {
     "express": "^4.17.1",
-    "vhost": "^3.0.2",
-    "pm2": "^4.5.6"
+    "vhost": "^3.0.2"
   }
 }
