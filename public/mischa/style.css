@@ -1,6 +1,6 @@
 html,
 body{
-  font: 20px/24px "Quicksand",Arial,sans-serif;
+  font: 18px/22px "Quicksand",Arial,sans-serif;
   height: 100%;
   min-height: 100%;
   margin: 0;
@@ -72,21 +72,51 @@ ul{
   overflow: hidden;
   position: relative;
 }
-.content h2{
+.bg{
+  background-size: auto 100%;
+  background-position: center center;
+  opacity: 15%;
+}
+#home .bg{
+  background: url('./img/home.jpg') 70% top no-repeat;
+  background-size: auto 160%;
+}
+#job .bg{
+  background-image: url('./img/job.jpg');
+}
+#hobbies .bg{
+  background: url('./img/hobbies.jpg') 70% center no-repeat;
+  background-size: auto 100%;
+}
+#contact .bg{
+  background-image: url('./img/contact.jpg');
+}
+.content-holder h2{
   font: bold 30px/50px "Quicksand",Arial,sans-serif;
   margin: 0 0 50px;
 }
-.home-bg{
-  background: url('./img/bg.jpg') 70% top no-repeat;
-  background-size: auto 160%;
-  opacity: 30%;
-}
-.home-content{
-  z-index: 2;
-  padding: 200px 20%;
-}
-.home-content li {
+.content-holder h3{
+  font: bold 20px/24px "Quicksand",Arial,sans-serif;
   margin: 0 0 10px;
+}
+.content-holder{
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  z-index: 2;
+  width: 60%;
+  min-width: 400px;
+}
+.content-holder li{
+  margin: 0 0 15px;
+}
+#job ul{
+  margin: 0 0 50px;
+}
+#job ul span{
+  display: block;
+  font-weight: bold;
+  margin-left: -30px;
 }
 @media only screen and (max-width: 800px) {
   .sidebar{
