@@ -111,12 +111,12 @@ ul{
   margin: 0 0 15px;
 }
 #job ul{
-  margin: 0 0 50px;
+  margin: 0 0 50px 20px;
 }
 #job ul span{
   display: block;
   font-weight: bold;
-  margin-left: -30px;
+  margin-left: -20px;
 }
 @media only screen and (max-width: 800px) {
   .sidebar{
