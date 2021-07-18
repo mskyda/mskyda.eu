@@ -59,7 +59,7 @@ function checkStatus(passID, showResult){
 
       }
 
-      timeout = setTimeout(() => { checkStatus(passID); }, 60 * 1000);
+      timeout = setTimeout(() => { checkStatus(passID); }, process.env.UPDATE_FREQUENCY * 60 * 1000);
 
       status = str;
 
