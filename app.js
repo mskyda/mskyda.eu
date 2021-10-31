@@ -25,3 +25,4 @@ setInterval(() => { https.get(process.env.PING_URL); }, 5 * 60000);
 module.exports = app;
 
 require('./telegram-bot');
+require('./resolve-dns');
