@@ -36,9 +36,15 @@ async function updateDNSRecords(newIP) {
     const dnsRecords = await getDNSRecords();
     console.info(`[DNS]: fetched ${dnsRecords.length} records`);
 
+    const excludedRecords = process.env.EXCLUDED_DNS_RECORDS ? process.env.EXCLUDED_DNS_RECORDS.split('|') : [];
+
     for (const record of dnsRecords) {
-        console.info(`[DNS]: update record "${record.name}"`);
-        await updateDNSRecord(record, newIP);
+        if(~excludedRecords.indexOf(record.name)){
+            console.info(`[DNS]: record "${record.name}" is excluded`);
+        } else {
+            console.info(`[DNS]: update record "${record.name}"`);
+            await updateDNSRecord(record, newIP);
+        }
     }
 
 }
