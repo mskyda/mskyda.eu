@@ -41,6 +41,8 @@ async function updateDNSRecords(newIP) {
     for (const record of dnsRecords) {
         if(~excludedRecords.indexOf(record.name)){
             console.info(`[DNS]: record "${record.name}" is excluded`);
+        } else if(record.type !== 'A') {
+            console.info(`[DNS]: record "${record.name}" is not an A record`);
         } else {
             console.info(`[DNS]: update record "${record.name}"`);
             await updateDNSRecord(record, newIP);
