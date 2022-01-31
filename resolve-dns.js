@@ -14,17 +14,22 @@ async function checkIP(currentIP) {
 
     const newIP = await publicIP.v4();
 
-    if(!newIP){ return; }
+    if(!newIP){
 
-    if(!currentIP){
-        console.info(`[DNS]: first run. set current IP to ${newIP}`);
-        currentIP = newIP;
-    }
+        console.info(`${(new Date).getTime()} [DNS]: unable to fetch IP`);
 
-    if(currentIP !== newIP){
-        console.info(`[DNS]: IP has changed from ${currentIP} to ${newIP}`);
+    } else if(currentIP !== newIP){
+
+        if(currentIP){
+            console.info(`${(new Date).getTime()} [DNS]: IP has changed from ${currentIP} to ${newIP}`);
+        } else {
+            console.info(`${(new Date).getTime()} [DNS]: first run. set current IP to ${newIP}`);
+        }
+
         await updateDNSRecords(newIP);
+
         currentIP = newIP;
+
     }
 
     setTimeout(() => { checkIP(currentIP); },  5 * 60000);
