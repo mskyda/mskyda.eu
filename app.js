@@ -9,15 +9,18 @@ const app = express();
 const mischa = express();
 const ira = express();
 const finik = express();
+const translit = express();
 
 app.use(vhost('mischa.skyda.eu', mischa));
 app.use(vhost('ira.skyda.eu', ira));
 app.use(vhost('finik.skyda.eu', finik));
+app.use(vhost('translit.skyda.eu', translit));
 
 app.use(express.static(__dirname + '/public/root/'));
 mischa.use(express.static(__dirname + '/public/mischa/'));
 ira.use(express.static(__dirname + '/public/ira/'));
 finik.use(express.static(__dirname + '/public/finik/'));
+translit.use(express.static(__dirname + '/public/translit/'));
 
 app.listen(process.env.PORT || 8080);
 
