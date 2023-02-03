@@ -18,20 +18,57 @@ const config = {
         [['t', 'т']],
         [['u', 'у']],
         [['w', 'в'], ['q', 'кв']],
-        [['x', 'кз'], ['y', `ы`], ['z', 'ц']],
+        [['x', 'кз'], ['y', 'ы'], ['z', 'ц']],
         [['ß', 'cc'],['ä', 'э'], ['ö', `ё`], ['ü', 'ю']]
+    ],
+    'de_gr': [
+        [['ps', 'ψ'], ['sch', 'σ'], ['ts', 'ζ']],
+        [['ch', 'χ'], ['h', 'χ']],
+        [['a', 'α'], ['e', 'ε']],
+        [['th', 'θ'], ['ks', 'ξ']],
+        [['b', 'β']],
+        [['ck', 'κ'], ['c', 'κ']],
+        [['d', 'δ']],
+        [['f', 'φ'], ['v', 'φ']],
+        [['g', 'γκ']],
+        [['i', 'ι'], ['j', 'ι']],
+        [['l', 'λ']],
+        [['m', 'μ']],
+        [['n', 'ν']],
+        [['p', 'π']],
+        [['r', 'ρ']],
+        [['ß', 'σ'], ['s', 'σ']],
+        [['t', 'τ']],
+        [['u', 'ου']],
+        [['w', 'β'], ['q', 'κβ']],
+        [['x', 'ι'], ['y', 'υ'], ['z', 'ζ']],
+        [['ä', 'αι'], ['ö', `ιο`], ['ü', 'ιυ']]
     ]
 };
-let mode = 'de_ru';
+
+
+const input = document.querySelector('#input-select');
+const output = document.querySelector('#output-select');
+const contentHolder = document.querySelector('#content');
+const content = contentHolder.innerHTML;
+
+input.addEventListener("change", translit);
+output.addEventListener("change", translit);
+
+translit();
 
 function translit(){
 
-    const contentHolder = document.querySelector('#content');
+    contentHolder.innerHTML = content;
     
     contentHolder.querySelectorAll('p').forEach((fragment, i) => {
         
         let fragmentContent = fragment.innerHTML;
         let prefix = '';
+
+        const mode = `${input.value}_${output.value}`;
+
+        if(!mode || !config[mode]) { return; }
 
         config[mode].forEach((pairs, j) => {
 
@@ -62,5 +99,3 @@ function translit(){
     });
 
 }
-
-translit();

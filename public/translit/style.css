@@ -12,8 +12,9 @@ h2 {
     text-align: center;
     width: 100%;
 }
-h2 {
-    font: 18px/30px Arial, Helvetica, sans-serif;
+h2,
+h2 select {
+    font: 20px/30px Arial, Helvetica, sans-serif;
 }
 #content {
     height: 80vh;
